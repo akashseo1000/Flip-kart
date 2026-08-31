@@ -1,10 +1,12 @@
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 const mysql = require('mysql2')
 
 const db = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'Samanta@2628',
-  database: 'flipkart_clone',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0

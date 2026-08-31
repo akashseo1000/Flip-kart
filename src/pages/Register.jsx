@@ -1,3 +1,4 @@
+import API_BASE_URL from '../config/api'
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import './Register.css'
@@ -19,7 +20,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        'http://localhost:5000/api/users/register',
+        `${API_BASE_URL}/users/register`,
         {
           method: 'POST',
           headers: {

@@ -1,3 +1,4 @@
+import API_BASE_URL from '../config/api'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Cart.css'
@@ -23,7 +24,7 @@ function Cart() {
       }
 
       try {
-        const response = await fetch('http://localhost:5000/api/cart', {
+        const response = await fetch(`${API_BASE_URL}/cart`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -99,8 +100,9 @@ function Cart() {
     }
 
     try {
+      
       const response = await fetch(
-        `http://localhost:5000/api/cart/${cartId}`,
+      `${API_BASE_URL}/cart/${cartId}`,
         {
           method: 'PUT',
           headers: {

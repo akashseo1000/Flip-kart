@@ -1,6 +1,10 @@
 const jwt = require('jsonwebtoken')
 
-const JWT_SECRET = 'flipkart_clone_secret_key'
+const JWT_SECRET = process.env.JWT_SECRET
+
+if (!JWT_SECRET) {
+  throw new Error('JWT_SECRET is missing from backend/.env')
+}
 
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers.authorization

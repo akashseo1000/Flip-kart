@@ -1,3 +1,4 @@
+import API_BASE_URL from '../config/api'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './ProductDetails.css'
@@ -10,7 +11,7 @@ function ProductDetails() {
   const [cartMessage, setCartMessage] = useState('')
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products/${id}`)
+    fetch(`${API_BASE_URL}/products/${id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch product')

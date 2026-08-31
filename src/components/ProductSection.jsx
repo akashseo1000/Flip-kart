@@ -1,3 +1,4 @@
+import API_BASE_URL from '../config/api'
 import { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
 
@@ -7,7 +8,7 @@ function ProductSection() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch(`${API_BASE_URL}/products`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch products')
