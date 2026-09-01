@@ -61,7 +61,7 @@ function Cart() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/cart/${cartId}`,
+        `${API_BASE_URL}/cart`, 
         {
           method: 'DELETE',
           headers: {

@@ -1,3 +1,4 @@
+import API_BASE_URL from '../config/api'
 import { useEffect, useState } from 'react'
 import {
   GoogleMap,
@@ -55,7 +56,7 @@ function Profile() {
 
       try {
         const response = await fetch(
-          'http://localhost:5000/api/users/profile',
+          `${API_BASE_URL}/users/profile`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -333,7 +334,7 @@ function Profile() {
 
     try {
       const response = await fetch(
-        'http://localhost:5000/api/users/profile/address',
+        `${API_BASE_URL}/users/profile/address`,
         {
           method: 'POST',
           headers: {

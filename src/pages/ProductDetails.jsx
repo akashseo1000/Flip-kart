@@ -59,12 +59,12 @@ function ProductDetails() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/cart', {
+      const response = await fetch(`${API_BASE_URL}/cart`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        },
+        'Content-Type': 'application/json',
+         Authorization: `Bearer ${token}`
+          },
         body: JSON.stringify({
           product_id: product.id,
           quantity: 1
